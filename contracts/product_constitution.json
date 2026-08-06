@@ -1,0 +1,45 @@
+{
+  "product": "NexHire",
+  "version": "3.0",
+  "core_release": "1.0",
+  "canonical_roles": [
+    "JobSeeker",
+    "Employer",
+    "Administrator",
+    "SystemWorker"
+  ],
+  "core_lifecycle": [
+    "Register",
+    "Evidence",
+    "TrustedVacancy",
+    "Match",
+    "Apply",
+    "Review",
+    "ApplicationStatus",
+    "ContactRequest",
+    "CandidateDecision"
+  ],
+  "non_negotiables": [
+    "verified employer trust",
+    "explainable deterministic matching",
+    "duplicate-safe application",
+    "candidate-controlled contact consent",
+    "backend authorization",
+    "auditability"
+  ],
+  "phase2": [
+    "Interview",
+    "Offer",
+    "TalentPool",
+    "ComplaintCase",
+    "RM-2.0"
+  ],
+  "source_hierarchy": [
+    "Product Constitution",
+    "Approved Decision Records",
+    "Business Rules",
+    "Architecture/API/Data Contracts",
+    "Implementation Mapping",
+    "Prototype"
+  ]
+}
