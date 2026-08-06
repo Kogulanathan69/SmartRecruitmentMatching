@@ -1,0 +1,75 @@
+{
+  "version": "3.1",
+  "module": "M05 Company Trust",
+  "canonical_publishing_rule": "Draft vacancies may be created before verification; public publish/activate requires Verified.",
+  "states": [
+    "Draft",
+    "Submitted",
+    "UnderReview",
+    "MoreInformationRequired",
+    "Verified",
+    "Rejected",
+    "Suspended",
+    "Expired"
+  ],
+  "document_states": [
+    "NotUploaded",
+    "Uploaded",
+    "Quarantined",
+    "Scanning",
+    "UnderReview",
+    "Approved",
+    "Rejected",
+    "Replaced",
+    "Deleted"
+  ],
+  "decisions": [
+    "Verified",
+    "Rejected",
+    "MoreInformationRequired",
+    "Suspended",
+    "RequestReverification"
+  ],
+  "public_projection": [
+    "companyId",
+    "companyName",
+    "verificationState",
+    "verifiedEffectiveDate",
+    "trustBadge"
+  ],
+  "restricted": [
+    "document content",
+    "representative identity",
+    "internal risk details",
+    "review notes"
+  ],
+  "matching_impact": "None. Verification does not modify RM-1.0 score or ranking.",
+  "screens": [
+    "CV-01",
+    "CV-02",
+    "CV-03",
+    "CV-04",
+    "CV-05",
+    "CV-06",
+    "CV-07",
+    "CV-08",
+    "CV-09",
+    "CV-10",
+    "CV-11",
+    "CV-12"
+  ],
+  "rules": [
+    "BR-CV-001",
+    "BR-CV-002",
+    "BR-CV-003",
+    "BR-CV-004",
+    "BR-CV-005",
+    "BR-CV-006",
+    "BR-CV-007",
+    "BR-CV-008",
+    "BR-CV-009",
+    "BR-CV-010",
+    "BR-CV-011",
+    "BR-CV-012"
+  ]
+}

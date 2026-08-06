@@ -1,0 +1,21 @@
+{
+  "ruleVersion": "RM-1.0",
+  "weights": {
+    "requiredSkills": 55,
+    "experience": 20,
+    "education": 15,
+    "location": 10
+  },
+  "preferredSkillsScore": false,
+  "range": [
+    0,
+    100
+  ],
+  "requirements": [
+    "deterministic",
+    "explainable",
+    "replayable",
+    "golden-tested",
+    "no individual admin override"
+  ]
+}
