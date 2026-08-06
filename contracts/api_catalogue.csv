@@ -1,0 +1,83 @@
+Method,Path,Authorization,Purpose,UseCase,Outcomes
+POST,/api/v1/auth/register,Anonymous,Register JobSeeker or Employer; acknowledge notice,UC01,201/400/409/429
+POST,/api/v1/auth/login,Anonymous,Authenticate active account and issue access/refresh session,UC02,200/400/401/429
+POST,/api/v1/auth/refresh,Refresh cookie,Rotate hashed refresh token and issue new access token,UC02,200/401/409/429
+POST,/api/v1/auth/logout,Authenticated/cookie,Revoke refresh session; idempotent,UC02,204/401
+GET,/api/v1/auth/me,Authenticated,"Return minimal identity, role and workspace state",UC02,200/401
+GET,/api/v1/public/jobs,Anonymous,Search only trusted public vacancies,UC07,200/400/429
+GET,/api/v1/public/jobs/{vacancyId},Anonymous,Trusted vacancy public detail,UC07,200/404/429
+GET,/api/v1/skills,Authenticated,Canonical skill/alias lookup with paging,"UC04, UC15, UC23",200/400/401/429
+GET,/api/v1/candidate/profile,JobSeeker owner,Read structured profile and readiness,UC03,200/401/403
+PUT,/api/v1/candidate/profile,JobSeeker owner,Replace validated profile using If-Match,UC03,200/400/401/409/422
+GET,/api/v1/candidate/skills,JobSeeker owner,Read confirmed skill passport,UC04,200/401/403
+POST,/api/v1/candidate/skills,JobSeeker owner,Add canonical skill and evidence level,UC04,201/400/409/422
+DELETE,/api/v1/candidate/skills/{skillId},JobSeeker owner,Remove confirmed skill evidence,UC04,204/404/409
+GET,/api/v1/candidate/resume,JobSeeker owner,Read current CV metadata only,UC05,200/404
+POST,/api/v1/candidate/resume,JobSeeker owner,Upload multipart CV to quarantine; max 5 MB,UC05,201/400/413/415/422/429
+GET,/api/v1/candidate/resume/content,JobSeeker owner,Authorized private stream of own active CV,UC05,200/404/423
+DELETE,/api/v1/candidate/resume,JobSeeker owner,Deactivate current CV and remove eligible object,UC05,204/404/409
+GET,/api/v1/candidate/cv-document,JobSeeker owner,Read candidate-authored CV Studio document,UC06,200/404
+PUT,/api/v1/candidate/cv-document,JobSeeker owner,Save schema-validated CV Studio draft,UC06,200/400/409/422
+POST,/api/v1/candidate/cv-document/render,JobSeeker owner,Render candidate text into approved PDF template,UC06,201/400/422/429
+GET,/api/v1/candidate/jobs,JobSeeker,Trusted vacancies plus deterministic match projection,"UC07, UC08",200/400/401/429
+GET,/api/v1/candidate/jobs/{vacancyId}/match,JobSeeker,"RM-1.0 components, gaps and replay receipt",UC08,200/404/409/422
+POST,/api/v1/candidate/applications,JobSeeker,Duplicate-safe apply; Idempotency-Key required,UC09,201/400/404/409/422/429
+GET,/api/v1/candidate/applications,JobSeeker owner,Paged application tracker,UC10,200/400
+GET,/api/v1/candidate/applications/{applicationId},JobSeeker owner,Application detail and ordered history,UC10,200/404
+POST,/api/v1/candidate/applications/{applicationId}/withdraw,JobSeeker owner,Allowed-state withdrawal command,UC10,200/404/409/412
+GET,/api/v1/candidate/contact-requests,JobSeeker owner,Paged job-specific consent requests,UC11,200/400
+POST,/api/v1/candidate/contact-requests/{requestId}/decision,JobSeeker owner,Accept or decline once using If-Match,UC11,200/404/409/412/422
+GET,/api/v1/notifications,Authenticated owner,Paged in-app inbox and unread count,UC12,200/400
+POST,/api/v1/notifications/{notificationId}/read,Authenticated owner,Mark one notification read; idempotent,UC12,204/404
+POST,/api/v1/notifications/read-all,Authenticated owner,Mark current inbox read; bounded command,UC12,204/429
+GET,/api/v1/candidate/privacy,JobSeeker owner,"Read privacy notice, visibility and request preferences",UC13,200
+PUT,/api/v1/candidate/privacy,JobSeeker owner,Update visibility/preferences using If-Match,UC13,200/400/409/412
+POST,/api/v1/candidate/deletion-requests,JobSeeker owner,Submit controlled deletion request,UC13,202/400/409
+GET,/api/v1/candidate/deletion-requests/latest,JobSeeker owner,Read request state without internal retention detail,UC13,200/404
+GET,/api/v1/employer/company,Employer owner,Read owned company and trust state,UC14,200/404
+PUT,/api/v1/employer/company,Employer owner,Update owned company using If-Match,UC14,200/400/409/412
+POST,/api/v1/employer/company/verification,Employer owner,Submit evidence for manual verification,UC14,202/400/409/413/415
+GET,/api/v1/employer/company/verification,Employer owner,Read current/history-safe verification status,UC14,200/404
+GET,/api/v1/employer/vacancies,Employer owner,Paged owned vacancy workspace,UC15,200/400
+POST,/api/v1/employer/vacancies,Employer owner,Create Draft vacancy,UC15,201/400/409/422
+GET,/api/v1/employer/vacancies/{vacancyId},Employer owner,Read owned vacancy detail,UC15,200/404
+PUT,/api/v1/employer/vacancies/{vacancyId},Employer owner,Update permitted vacancy fields with If-Match,UC15,200/400/404/409/412/422
+POST,/api/v1/employer/vacancies/{vacancyId}/activate,Employer owner,Publish only when full trust predicate passes,UC15,200/404/409/412/422
+POST,/api/v1/employer/vacancies/{vacancyId}/close,Employer owner,Close owned Active vacancy; no v1 reopen,UC15,200/404/409/412
+GET,/api/v1/employer/vacancies/{vacancyId}/applicants,Employer vacancy owner,Stable RM-1.0 ranked applicant queue,UC16,200/400/404
+GET,/api/v1/employer/applications/{applicationId},Employer vacancy owner,"Applicant evidence, symmetric explanation, masked contact",UC16,200/404
+GET,/api/v1/employer/applications/{applicationId}/resume,Employer vacancy owner,Authorized private CV stream and audit,UC16,200/404/409/423
+POST,/api/v1/employer/applications/{applicationId}/status,Employer vacancy owner,Allowed transition + history + notification,UC17,200/404/409/412/422
+POST,/api/v1/employer/applications/{applicationId}/contact-request,Employer vacancy owner,Create one Pending 7-day request; Idempotency-Key,UC18,201/404/409/422/429
+GET,/api/v1/employer/contact-requests,Employer owner,Paged request states,UC18,200/400
+GET,/api/v1/employer/contact-requests/{requestId}/accepted-details,Employer context owner,Release phone/email only after Accepted and valid context,UC18,200/404/409
+GET,/api/v1/employer/reports/summary,Employer owner,Database-truth basic recruitment summary,UC19,200/400/429
+GET,/api/v1/employer/reports/applications.csv,Employer owner,Bounded formula-safe CSV export,UC19,200/400/413/429
+GET,/api/v1/admin/verifications,Administrator,Paged Pending company verification queue,UC20,200/400
+GET,/api/v1/admin/verifications/{reviewId},Administrator,Evidence and history for decision,UC20,200/404
+POST,/api/v1/admin/verifications/{reviewId}/decision,Administrator,Verify or reject with reason using If-Match,UC20,200/400/404/409/412
+GET,/api/v1/admin/dashboard,Administrator,"Truth counts: users, vacancies, applications",UC21,200/429
+GET,/api/v1/admin/users,Administrator,Bounded account query,UC21,200/400
+POST,/api/v1/admin/users/{userId}/suspend,Administrator,Suspend account; revoke sessions; audit,UC21,200/404/409/412
+POST,/api/v1/admin/users/{userId}/reactivate,Administrator,Reactivate eligible account; audit,UC21,200/404/409/412
+POST,/api/v1/public/jobs/{vacancyId}/reports,Authenticated JobSeeker,Report a trusted public vacancy,UC22,202/400/404/409/429
+GET,/api/v1/admin/vacancy-reports,Administrator,Moderation/report queue,UC22,200/400
+POST,/api/v1/admin/vacancies/{vacancyId}/moderation,Administrator,Approve/reject/close with reason,UC22,200/400/404/409/412
+POST,/api/v1/admin/vacancy-reports/{reportId}/resolve,Administrator,Resolve one report and audit outcome,UC22,200/400/404/409
+POST,/api/v1/admin/skills,Administrator,Create unique canonical skill,UC23,201/400/409
+PUT,/api/v1/admin/skills/{skillId},Administrator,Rename/deactivate safely with If-Match,UC23,200/400/404/409/412
+POST,/api/v1/admin/skills/{skillId}/aliases,Administrator,Add unique normalized alias,UC23,201/400/404/409
+DELETE,/api/v1/admin/skills/{skillId}/aliases/{aliasId},Administrator,Remove alias without deleting candidate evidence,UC23,204/404/409
+GET,/api/v1/admin/audit-events,Administrator audit policy,Bounded append-only audit query,UC24,200/400/403/429
+GET,/api/v1/admin/settings,Administrator,Read locked platform/scoring settings,UC24,200/403
+PUT,/api/v1/employer/company/verification/profile,Employer owner,Save legal identity draft using If-Match,UC14,200/400/401/409/422
+POST,/api/v1/employer/company/verification/documents,Employer owner,Upload evidence to protected quarantine,UC14,201/400/413/415/422/429
+DELETE,/api/v1/employer/company/verification/documents/{documentId},Employer owner,Remove draft evidence before active review,UC14,204/404/409
+POST,/api/v1/employer/company/verification/submit,Employer owner,Snapshot and submit complete evidence package,UC14,201/400/409/412/422/429
+POST,/api/v1/employer/company/verification/resubmit,Employer owner,Resubmit corrected evidence,UC14,201/400/409/412/422
+GET,/api/v1/admin/company-verifications,Admin trust role,Paged and filtered verification queue,UC20,200/400/401/403
+GET,/api/v1/admin/company-verifications/{submissionId},Admin trust role,Read restricted verification review detail,UC20,200/401/403/404
+GET,/api/v1/admin/company-verifications/{submissionId}/documents/{documentId}/content,Admin trust role,Audited private evidence stream,UC20,200/401/403/404/423
+POST,/api/v1/admin/company-verifications/{submissionId}/decision,Admin trust role,Approve Reject or RequestInfo using If-Match,UC20,200/400/401/403/409/412/422
+POST,/api/v1/admin/companies/{companyId}/suspend-verification,Admin trust role,Suspend publishing trust privilege,UC20,200/400/401/403/404/409
+POST,/api/v1/admin/companies/{companyId}/request-reverification,Admin trust role,Require updated company evidence,UC20,200/400/401/403/404/409
