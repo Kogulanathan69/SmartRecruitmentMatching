@@ -1,0 +1,70 @@
+{
+  "Account": [
+    "Active",
+    "Suspended",
+    "Deactivated"
+  ],
+  "Company Verification": [
+    "Draft",
+    "Submitted",
+    "UnderReview",
+    "MoreInformationRequired",
+    "Verified",
+    "Rejected",
+    "Suspended",
+    "Expired"
+  ],
+  "Vacancy": [
+    "Draft",
+    "PendingModeration",
+    "Active",
+    "Closed",
+    "Expired",
+    "Rejected"
+  ],
+  "Application": [
+    "Submitted",
+    "UnderReview",
+    "Shortlisted",
+    "Rejected",
+    "Withdrawn"
+  ],
+  "Contact Request": [
+    "Pending",
+    "Accepted",
+    "Declined",
+    "Expired",
+    "Cancelled"
+  ],
+  "Resume": [
+    "Quarantined",
+    "Scanning",
+    "Active",
+    "Rejected",
+    "Deleted"
+  ],
+  "Deletion Request": [
+    "Submitted",
+    "UnderReview",
+    "Approved",
+    "Rejected",
+    "Completed"
+  ],
+  "Vacancy Report": [
+    "Submitted",
+    "UnderReview",
+    "Resolved",
+    "Rejected"
+  ],
+  "Verification Document": [
+    "NotUploaded",
+    "Uploaded",
+    "Quarantined",
+    "Scanning",
+    "UnderReview",
+    "Approved",
+    "Rejected",
+    "Replaced",
+    "Deleted"
+  ]
+}
