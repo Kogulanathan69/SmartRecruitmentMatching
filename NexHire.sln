@@ -1,1 +1,64 @@
-# Visual Studio Solution File placeholder - generate with `dotnet new sln`
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FAB1EA08-9068-4DCB-A3DA-0E77398B9685}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NexHire.API", "src\NexHire.API\NexHire.API.csproj", "{4D5660D0-E8CB-4947-99BD-2B10F1672919}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NexHire.Application", "src\NexHire.Application\NexHire.Application.csproj", "{40D70D0D-8B81-48D2-8F46-23CDD3B846B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NexHire.Domain", "src\NexHire.Domain\NexHire.Domain.csproj", "{54E28E0C-77F8-45CC-9DC8-3BC22638557A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NexHire.Infrastructure", "src\NexHire.Infrastructure\NexHire.Infrastructure.csproj", "{D602E46A-FD8B-4C33-AEA7-43E8FA147200}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6425A6D4-C907-499C-A882-745F3BD0C64F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NexHire.UnitTests", "tests\NexHire.UnitTests\NexHire.UnitTests.csproj", "{BECFB8E9-3AD2-402A-9B76-F311F820CFC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NexHire.IntegrationTests", "tests\NexHire.IntegrationTests\NexHire.IntegrationTests.csproj", "{540CDFA4-8C62-49CD-A5B2-6128EBC4D1DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D5660D0-E8CB-4947-99BD-2B10F1672919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D5660D0-E8CB-4947-99BD-2B10F1672919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D5660D0-E8CB-4947-99BD-2B10F1672919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D5660D0-E8CB-4947-99BD-2B10F1672919}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40D70D0D-8B81-48D2-8F46-23CDD3B846B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40D70D0D-8B81-48D2-8F46-23CDD3B846B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40D70D0D-8B81-48D2-8F46-23CDD3B846B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40D70D0D-8B81-48D2-8F46-23CDD3B846B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54E28E0C-77F8-45CC-9DC8-3BC22638557A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54E28E0C-77F8-45CC-9DC8-3BC22638557A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54E28E0C-77F8-45CC-9DC8-3BC22638557A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54E28E0C-77F8-45CC-9DC8-3BC22638557A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D602E46A-FD8B-4C33-AEA7-43E8FA147200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D602E46A-FD8B-4C33-AEA7-43E8FA147200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D602E46A-FD8B-4C33-AEA7-43E8FA147200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D602E46A-FD8B-4C33-AEA7-43E8FA147200}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BECFB8E9-3AD2-402A-9B76-F311F820CFC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BECFB8E9-3AD2-402A-9B76-F311F820CFC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BECFB8E9-3AD2-402A-9B76-F311F820CFC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BECFB8E9-3AD2-402A-9B76-F311F820CFC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{540CDFA4-8C62-49CD-A5B2-6128EBC4D1DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{540CDFA4-8C62-49CD-A5B2-6128EBC4D1DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{540CDFA4-8C62-49CD-A5B2-6128EBC4D1DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{540CDFA4-8C62-49CD-A5B2-6128EBC4D1DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4D5660D0-E8CB-4947-99BD-2B10F1672919} = {FAB1EA08-9068-4DCB-A3DA-0E77398B9685}
+		{40D70D0D-8B81-48D2-8F46-23CDD3B846B2} = {FAB1EA08-9068-4DCB-A3DA-0E77398B9685}
+		{54E28E0C-77F8-45CC-9DC8-3BC22638557A} = {FAB1EA08-9068-4DCB-A3DA-0E77398B9685}
+		{D602E46A-FD8B-4C33-AEA7-43E8FA147200} = {FAB1EA08-9068-4DCB-A3DA-0E77398B9685}
+		{BECFB8E9-3AD2-402A-9B76-F311F820CFC7} = {6425A6D4-C907-499C-A882-745F3BD0C64F}
+		{540CDFA4-8C62-49CD-A5B2-6128EBC4D1DB} = {6425A6D4-C907-499C-A882-745F3BD0C64F}
+	EndGlobalSection
+EndGlobal
