@@ -1,0 +1,31 @@
+Requirement,UseCase,Module,PrimaryTest
+FR-01,UC01,M01,TC-001
+FR-02,UC02,M02,TC-002
+FR-03,UC03,M03,TC-003
+FR-04,UC04,M04,TC-004
+FR-05,UC05,M05,TC-005
+FR-06,UC06,M06,TC-006
+FR-07,UC07,M07,TC-007
+FR-08,UC08,M08,TC-008
+FR-09,UC09,M09,TC-009
+FR-10,UC10,M10,TC-010
+FR-11,UC11,M11,TC-011
+FR-12,UC12,M12,TC-012
+FR-13,UC13,M13,TC-013
+FR-14,UC14,M14,TC-014
+FR-15,UC15,M15,TC-015
+FR-16,UC16,M16,TC-016
+FR-17,UC17,M16,TC-017
+FR-18,UC18,M16,TC-018
+FR-19,UC19,M16,TC-019
+FR-20,UC20,M16,TC-020
+FR-21,UC21,M16,TC-021
+FR-22,UC22,M16,TC-022
+FR-23,UC23,M16,TC-023
+FR-24,UC24,M16,TC-024
+FR-25,UC25,M16,TC-024
+FR-CV-01,Company verification preparation,UC14,CV-02..CV-05,Employer verification profile/documents/submit,CompanyVerificationSubmission; CompanyVerificationDocument,CV-T001..CV-T005
+FR-CV-02,Admin verification review and decision,UC20,CV-09..CV-11,Admin queue/detail/decision,CompanyVerificationDecision; CompanyVerificationHistory,CV-T006..CV-T009
+FR-CV-03,Verified publishing gate,UC15,CV-12,Vacancy publish command policy,Company.VerificationProjection,CV-T010..CV-T012
+NFR-CV-SEC,Protected evidence,"UC14,UC20","CV-04,CV-10",Private stream/resource authorization,Protected object storage metadata,"CV-T003,CV-T014"
+NFR-CV-UX,Accessible verification workflow,"UC14,UC20",CV-01..CV-12,Problem Details/state projection,N/A,CV-T015

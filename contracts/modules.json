@@ -1,0 +1,110 @@
+[
+  {
+    "id": "M01",
+    "name": "Identity and Access",
+    "responsibility": "Registration, login, refresh, logout, role and account-state enforcement."
+  },
+  {
+    "id": "M02",
+    "name": "Candidate Profile",
+    "responsibility": "Structured candidate evidence and readiness."
+  },
+  {
+    "id": "M03",
+    "name": "Skill Passport",
+    "responsibility": "Canonical skills, aliases and candidate evidence."
+  },
+  {
+    "id": "M04",
+    "name": "Protected CV and CV Studio",
+    "responsibility": "Private upload, scan, controlled streaming and deterministic template rendering."
+  },
+  {
+    "id": "M05",
+    "name": "Company Trust",
+    "responsibility": "Complete company legal profile, protected evidence package, submission, administrator review, correction/resubmission, verification projection, suspension and re-verification.",
+    "screens": [
+      "CV-01 Employer Verification Alert",
+      "CV-02 Verification Overview",
+      "CV-03 Business Identity",
+      "CV-04 Document Workspace",
+      "CV-05 Review and Declaration",
+      "CV-06 Under Review",
+      "CV-07 More Information Required",
+      "CV-08 Outcome",
+      "CV-09 Admin Queue",
+      "CV-10 Admin Detail",
+      "CV-11 Decision Modal",
+      "CV-12 Publishing Gate"
+    ],
+    "business_rules": [
+      "BR-CV-001",
+      "BR-CV-002",
+      "BR-CV-003",
+      "BR-CV-004",
+      "BR-CV-005",
+      "BR-CV-006",
+      "BR-CV-007",
+      "BR-CV-008",
+      "BR-CV-009",
+      "BR-CV-010",
+      "BR-CV-011",
+      "BR-CV-012"
+    ]
+  },
+  {
+    "id": "M06",
+    "name": "Vacancy Lifecycle",
+    "responsibility": "Draft, moderation, activation, closure and expiry."
+  },
+  {
+    "id": "M07",
+    "name": "Search and Discovery",
+    "responsibility": "Trusted public vacancy search and candidate projections."
+  },
+  {
+    "id": "M08",
+    "name": "Matching Engine",
+    "responsibility": "RM-1.0 deterministic scoring, gaps, receipts and replay."
+  },
+  {
+    "id": "M09",
+    "name": "Applications",
+    "responsibility": "Idempotent duplicate-safe apply, history and withdrawal."
+  },
+  {
+    "id": "M10",
+    "name": "Employer Applicant Review",
+    "responsibility": "Stable ranking, evidence review and protected CV access."
+  },
+  {
+    "id": "M11",
+    "name": "Application Status",
+    "responsibility": "Allowed transition matrix, history and notifications."
+  },
+  {
+    "id": "M12",
+    "name": "Consent Contact",
+    "responsibility": "One pending request, candidate decision, conditional detail release."
+  },
+  {
+    "id": "M13",
+    "name": "Notifications",
+    "responsibility": "Owner-only in-app inbox and durable outbox delivery."
+  },
+  {
+    "id": "M14",
+    "name": "Privacy and Deletion",
+    "responsibility": "Preferences and controlled deletion requests."
+  },
+  {
+    "id": "M15",
+    "name": "Reporting and Audit",
+    "responsibility": "Truth-based summaries, exports and append-only audit."
+  },
+  {
+    "id": "M16",
+    "name": "Administration and Governance",
+    "responsibility": "Verification, users, moderation, skill governance and locked settings."
+  }
+]
