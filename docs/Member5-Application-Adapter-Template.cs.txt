@@ -1,0 +1,27 @@
+// TEMPLATE ONLY — Member 4 / Team Lead must align names with the real Application aggregate.
+using Microsoft.EntityFrameworkCore;
+using NexHire.Application.Interfaces.Services;
+
+public sealed class ApplicationAccessReader : IApplicationAccessReader
+{
+    private readonly ApplicationDbContext _dbContext;
+
+    public ApplicationAccessReader(ApplicationDbContext dbContext) => _dbContext = dbContext;
+
+    public async Task<ApplicationAccessSnapshot?> GetAsync(Guid applicationId, CancellationToken cancellationToken = default)
+    {
+        // Replace entity/property names only after inspecting the merged Applications module.
+        return await _dbContext.Applications
+            .AsNoTracking()
+            .Where(application => application.ApplicationId == applicationId)
+            .Select(application => new ApplicationAccessSnapshot(
+                application.ApplicationId,
+                application.Vacancy.CompanyId,
+                application.CandidateProfileId,
+                application.Status.ToString(),
+                application.Vacancy.Title,
+                application.Vacancy.Company.LegalName,
+                application.CandidateProfile.Headline))
+            .SingleOrDefaultAsync(cancellationToken);
+    }
+}

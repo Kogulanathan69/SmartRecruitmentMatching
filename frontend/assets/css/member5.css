@@ -1,0 +1,9 @@
+.member5-page{max-width:1180px;margin:0 auto;padding:24px;font-family:Inter,Segoe UI,Arial,sans-serif;color:#172033}
+.member5-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
+.member5-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.member5-card{background:#fff;border:1px solid #dde3ed;border-radius:14px;padding:18px;box-shadow:0 8px 24px rgba(24,39,75,.06)}
+.member5-card h3{margin:0 0 8px}.member5-muted{color:#667085;font-size:.92rem}.member5-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.member5-button{border:0;border-radius:9px;padding:10px 14px;cursor:pointer;background:#2251cc;color:#fff;font-weight:600}.member5-button.secondary{background:#e9eefb;color:#183a91}.member5-button.danger{background:#b42318}.member5-button:disabled{opacity:.55;cursor:not-allowed}
+.member5-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.member5-form label{display:grid;gap:6px;font-weight:600}.member5-form .full{grid-column:1/-1}.member5-form input,.member5-form select,.member5-form textarea{width:100%;box-sizing:border-box;border:1px solid #cfd7e6;border-radius:9px;padding:10px;background:#fff}.member5-form textarea{min-height:100px;resize:vertical}
+.member5-status{display:inline-flex;border-radius:999px;padding:4px 10px;background:#edf2ff;color:#2447a8;font-size:.78rem;font-weight:700}.member5-message{display:none;border-radius:10px;padding:12px;margin:12px 0}.member5-message.show{display:block}.member5-message.error{background:#fee4e2;color:#912018}.member5-message.success{background:#dcfae6;color:#05603a}.member5-empty{padding:32px;text-align:center;color:#667085;border:1px dashed #cfd7e6;border-radius:12px}.member5-loading{padding:24px;text-align:center;color:#667085}
+@media(max-width:720px){.member5-form{grid-template-columns:1fr}.member5-header{align-items:flex-start;flex-direction:column}}
